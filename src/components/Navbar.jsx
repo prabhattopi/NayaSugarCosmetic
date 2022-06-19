@@ -8,7 +8,7 @@ const Navbar = ({flow,setflow,active,setShow,setActive,hadleclick, HandleClose,u
     <div id='nav'>
         <div className='mainBox' >
             {/* logo gif */}
-            <div style={{cursor:"pointer"}} className='gif' onClick={()=> setShow(false)}>
+            <div className='gif' >
 <img src="https://in.sugarcosmetics.com/desc-images/pride-logo-option.gif" alt="###" />
             </div>
             {/* serch box */}

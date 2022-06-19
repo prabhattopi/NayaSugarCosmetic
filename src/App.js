@@ -15,7 +15,7 @@ function App() {
   const [active, setActive] = useState(false);
 
   // ---------kiran code start ------------------
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [cart, setCart] = useState([]);
 
   const handleClick = (item) =>{
