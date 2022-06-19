@@ -1,21 +1,25 @@
 
 import React from 'react'
-import './nav.css'
+import './nav.css';
+import SearchBar from './shivam/SearchBar'
+
 import { FaUser } from 'react-icons/fa'
-import { Button, Icon, Select, Stack,Text} from '@chakra-ui/react'
-const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setuser }) => {
+import { Button, Icon, Select, Stack,Text} from '@chakra-ui/react';
+
+const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setuser,setShowSearchResult,setSearchResult }) => {
   return (
     <div id='nav'>
         <div className='mainBox'>
             {/* logo gif */}
-            <div className='gif'>
+            <div className='gif' onClick={()=>setShowSearchResult(false)}>
 <img src="https://in.sugarcosmetics.com/desc-images/pride-logo-option.gif" alt="###" />
             </div>
             {/* serch box */}
-            <div className='search'>
+            {/* <div className='search'>
                 <input className='inputSearch' type="text" />
             <button className='buttonSearch'>search</button>
-             </div>
+             </div> */}
+              <SearchBar setShowSearchResult={setShowSearchResult} setSearchResult={setSearchResult}/>
             {/* login */}
          
                
@@ -27,7 +31,7 @@ const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setu
       ):(
         <Stack align="center" direction="row">
           <Icon as={FaUser} />
-          <Select width="200px" onChange={(e)=>{if(e.target.value=="Logout")setflow(false)}}>
+          <Select width="200px" onChange={(e)=>{if(e.target.value==="Logout")setflow(false)}}>
             <option value={user}>Hi {user}</option>
             <option value="Logout">Logout</option>
           </Select>
