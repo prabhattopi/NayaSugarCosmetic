@@ -4,14 +4,23 @@ import './nav.css';
 import SearchBar from './shivam/SearchBar'
 
 import { FaUser } from 'react-icons/fa'
+
+import { Button, Icon, Select, Stack,Text} from '@chakra-ui/react'
+const Navbar = ({flow,setflow,active,setShow,setActive,hadleclick, HandleClose,user,setuser, size }) => {
+
 import { Button, Icon, Select, Stack,Text} from '@chakra-ui/react';
 
 const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setuser,setShowSearchResult,setSearchResult }) => {
+
   return (
     <div id='nav'>
-        <div className='mainBox'>
+        <div className='mainBox' >
             {/* logo gif */}
+
+            <div style={{cursor:"pointer"}} className='gif' onClick={()=> setShow(false)}>
+
             <div className='gif' onClick={()=>setShowSearchResult(false)}>
+
 <img src="https://in.sugarcosmetics.com/desc-images/pride-logo-option.gif" alt="###" />
             </div>
             {/* serch box */}
@@ -47,11 +56,20 @@ const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setu
 </svg>
                 </a>
 {/* cart */}
-<a href="###">
-<svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
+
+
+    <div className="cart" onClick={()=> setShow(true)}>
+  <span>
+  <svg xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-bag-fill" viewBox="0 0 16 16">
   <path d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5z"/>
 </svg>
-</a>
+  </span>
+  <span>
+    {size}
+  </span>
+</div>
+
+
 {/* discount */}
 <a href="###">
     <img src="https://in.sugarcosmetics.com/desc-images/discountIcon.svg" alt="###" />
