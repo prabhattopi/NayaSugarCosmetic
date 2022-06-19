@@ -16,11 +16,15 @@ const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setu
     <div id='nav'>
         <div className='mainBox' >
             {/* logo gif */}
+<<<<<<< HEAD
+            <div className='gif' >
+=======
 
             <div style={{cursor:"pointer"}} className='gif' onClick={()=> setShow(false)}>
 
             <div className='gif' onClick={()=>setShowSearchResult(false)}>
 
+>>>>>>> 53a99ab9f066f1acbb9ed957e46c438cc19520b5
 <img src="https://in.sugarcosmetics.com/desc-images/pride-logo-option.gif" alt="###" />
             </div>
             {/* serch box */}
