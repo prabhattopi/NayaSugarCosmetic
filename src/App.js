@@ -33,8 +33,7 @@ function App() {
 
   // ---------kiran code end------------------
 
-  const [loading, setloading] = useState(false)
-  const [active, setActive] = useState(false);
+  
   const [showSearchResult, setShowSearchResult] = useState(false);
   const [searchResult, setSearchResult] = useState([]);
 
@@ -81,28 +80,18 @@ function App() {
     </div>) :
       <>
 
-        <Navbar user={user} setuser={setuser} active={active} setActive={setActive} flow={flow} setflow={setflow} hadleclick={hadleclick} HandleClose={HandleClose} setShowSearchResult={setShowSearchResult} setSearchResult={setSearchResult} />
+        <Navbar user={user} setShow={setShow}  size={cart.length} setuser={setuser} active={active} setActive={setActive} flow={flow} setflow={setflow} hadleclick={hadleclick} HandleClose={HandleClose} setShowSearchResult={setShowSearchResult} setSearchResult={setSearchResult} />
 
         {active ? <Register loading={loading} setloading={setloading} flow={flow} setflow={setflow} active={active} user={user} setuser={setuser} HandleClose={HandleClose} setActive={setActive} />
-          : (showSearchResult ? <SearchResults searchResult={searchResult} />
-            : <HomePage playMovie={playMovie} stopMovie={stopMovie} />)}
+         :show ? (<Cart cart={cart} setCart={setCart} handleChange={handleChange}/>)
+         :(showSearchResult ? <SearchResults searchResult={searchResult} />
+            : <HomePage playMovie={playMovie} stopMovie={stopMovie} handleClick={handleClick} />)}
 
-
-  </div>):
-    <>
-      
-     <Navbar  user={user} setuser={setuser} active={active} setActive={setActive} flow={flow} setflow={setflow} hadleclick={hadleclick} HandleClose={HandleClose} setShow={setShow}  size={cart.length}/>
-       
-     {active?<Register loading={loading} setloading={setloading} flow={flow} setflow={setflow} active={active} user={user} setuser={setuser} HandleClose={HandleClose} setActive={setActive}/>
-      : show?( <Cart cart={cart} setCart={setCart} handleChange={handleChange}/>) : <HomePage handleClick={handleClick} playMovie={playMovie} stopMovie={stopMovie}/>}
-    
      <Footer/>
-   </>
 
-        <Footer />
-      </>
-
-  );
+     </>
+  )
+  
 }
 
 export default App;

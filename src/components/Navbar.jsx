@@ -6,25 +6,16 @@ import SearchBar from './shivam/SearchBar'
 import { FaUser } from 'react-icons/fa'
 
 import { Button, Icon, Select, Stack,Text} from '@chakra-ui/react'
-const Navbar = ({flow,setflow,active,setShow,setActive,hadleclick, HandleClose,user,setuser, size }) => {
 
-import { Button, Icon, Select, Stack,Text} from '@chakra-ui/react';
-
-const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setuser,setShowSearchResult,setSearchResult }) => {
+const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setuser,setShow,setShowSearchResult,setSearchResult,size }) => {
 
   return (
     <div id='nav'>
         <div className='mainBox' >
             {/* logo gif */}
-<<<<<<< HEAD
-            <div className='gif' >
-=======
-
-            <div style={{cursor:"pointer"}} className='gif' onClick={()=> setShow(false)}>
 
             <div className='gif' onClick={()=>setShowSearchResult(false)}>
 
->>>>>>> 53a99ab9f066f1acbb9ed957e46c438cc19520b5
 <img src="https://in.sugarcosmetics.com/desc-images/pride-logo-option.gif" alt="###" />
             </div>
             {/* serch box */}
@@ -154,7 +145,7 @@ const Navbar = ({flow,setflow,active,setActive,hadleclick, HandleClose,user,setu
  </div>
   )
 }
-export default Navbar
+export default Navbar;
 
 
 
